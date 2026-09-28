@@ -22,11 +22,12 @@ case "${1:-}" in
       found=1; n=$(basename "$f" .pid)
       if alive "$n"; then echo "RUNNING  $n (pid $(cat "$f"))"; else echo "STOPPED  $n"; rm -f "$f"; fi
     done
-    [[ $found -eq 0 ]] && echo "no background jobs"
+    if [[ $found -eq 0 ]]; then echo "no background jobs"; fi
     echo "--- data collected ---"
     for d in data/raw/wiki/* data/raw/youtube; do
-      [[ -d "$d" ]] && printf "%-28s %s files\n" "$d" "$(find "$d" -name '*.json' | wc -l | tr -d ' ')"
+      if [[ -d "$d" ]]; then printf "%-28s %s files\n" "$d" "$(find "$d" -name '*.json' | wc -l | tr -d ' ')"; fi
     done
+    exit 0
     ;;
   stop)
     for f in .pids/*.pid; do
