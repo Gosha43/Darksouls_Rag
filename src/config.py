@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "data" / "raw"
 
-USER_AGENT = "DarkSoulsRAG-ClassProject/0.1 (educational NLP project; contact: your-email@example.com)"
+USER_AGENT = "griffithjr@msoe.edu"
 REQUEST_DELAY = 1.0  # seconds between requests; be polite to the wikis
 
 # Fandom wikis expose the MediaWiki API at <base>/api.php
