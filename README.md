@@ -8,6 +8,10 @@ Scrapers that build the raw corpus for a Dark Souls I/II/III lore RAG assistant.
 | YouTube lore videos | Data API v3 finds videos, `youtube-transcript-api` gets captions | `data/raw/youtube/<video_id>.json` |
 
 ## Quick start
+**Windows (PowerShell):** use `.\run.ps1 <cmd>` anywhere you see `make <cmd>` below
+(e.g. `.\run.ps1 setup`). If scripts are blocked: `Set-ExecutionPolicy -Scope Process Bypass`.
+
+**Mac/Linux:**
 ```bash
 make setup            # venv + deps + .env
 # edit .env -> YOUTUBE_API_KEY=...
